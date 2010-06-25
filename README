@@ -1,0 +1,14 @@
+The PayPal_IPN class provides an simple way of capturing the PayPal POST data,
+confirming it with PayPal and then making it available to the application.
+
+
+Minimum Example
+include_once 'PayPal_IPN.php';
+$PayPal = new PayPal_IPN();
+$PayPal->set_paypal_email('your_paypal@email_address.com');
+$PayPal->get_ipn();
+
+The returned data can then be accessed using the available variables - example
+$PayPal->amount;							//payment total
+$PayPal->customer_details['first_name'];	//customer first name
+$PayPal->error;								//Any errors generated during data processing
